@@ -22,6 +22,10 @@ If you'd like to play with symbols other than X's and O's, feel free to uncommen
   g.play
 ```
 
+
+![example game](game_screenshot.png)
+
+
 ---
 
 Ackowledgements: [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop) curriculum.
