@@ -15,6 +15,7 @@ class MastermindGame
     #{Color::COLOR_KEY.map { |k,v| Peg.new(color: Color::COLORS[v], filled: true) }.join(" ") }
 
     INPUT
+    @success_feedback = Array.new(Row::SIZE) { Peg.new(color: Color::COLORS[:red]) }
   end
 
   def play
@@ -29,7 +30,6 @@ class MastermindGame
       code_pegs.push Peg.new(color: color)
     end
     @board.initialize_code(code_pegs)
-
     @board.hide_code
 
     puts @board
@@ -63,9 +63,12 @@ class MastermindGame
       feedback_pegs = create_feedback(pegs, code_pegs)
       @board.add_feedback(feedback_pegs)
 
-
       puts @board
 
+      if feedback_pegs == @success_feedback
+        puts "\n\n***You won!***\n"
+        playing = false
+      end
       playing = false if @board.filled?
 
     end
@@ -74,7 +77,6 @@ class MastermindGame
     puts @board
 
     puts "Thanks for playing!"
-
   end
 
   def create_feedback(pegs, code_pegs)
