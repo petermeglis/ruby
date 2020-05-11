@@ -14,6 +14,10 @@ You have 12 rounds and make your guesses via letters to match the code. Red feed
 correct peg color being in the correct position. White feedback pegs correspond to having a correct peg color but 
 in the wrong position. Note: the feedback is given in random order!
 
+
+![example game](game_screenshot.png)
+
+
 ---
 
 Ackowledgements: [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop) curriculum.
